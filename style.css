@@ -3,46 +3,62 @@ body{
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 .container{
     height: 500px;
     width: 400px;
     background: linear-gradient(to top, #56ccf2, #2f80ed);
     text-align: center;
-    margin-left: 450px;
-    margin-top: 40px;
-    border: 2px solid black;
     border-radius: 25px;
-    padding: 20px;
+    padding: 25px;
     box-sizing: border-box;
+    transition: 0.3s ease;
+}
+.container:hover{
+    transform: scale(1.02);
 }
 .serch{
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 10px;
 }
 .serch input{
-    font-size: 17px;
-    height: 35px;
+    font-size: 16px;
+    height: 40px;
     width: 250px;
     border: none;
-    border-radius: 20px;
+    border-radius: 25px;
     padding-left: 15px;
+    outline: none;
+    transition: 0.3s ease;
+}
+.serch input:focus{
+    box-shadow: 0 0 10px rgba(255,255,255,0.8);
 }
 .serch button{
-    height: 35px;
-    width: 35px;
+    height: 40px;
+    width: 40px;
     border-radius: 50%;
     border: none;
     background-color: white;
     cursor: pointer;
+    transition: 0.3s ease;
+}
+.serch button:hover{
+    background-color: #f1f1f1;
+    transform: scale(1.1);
 }
 .serch button img{
     height: 18px;
     width: 18px;
 }
 .pic img{
-    height: 200px;
+    height: 100px;
     margin-top: 30px;
 }
 .digre{
@@ -55,19 +71,27 @@ body{
     font-size: 1.7rem;
     margin-top: 5px;
 }
+
+/* Footer */
 .foot{
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 60px;
-    padding: 0 20px;
 }
+
+/* Humidity & Wind */
 .hum, .wind{
     display: flex;
     align-items: center;
     gap: 10px;
     color: white;
+    transition: 0.3s ease;
 }
+.hum:hover, .wind:hover{
+    transform: scale(1.05);
+}
+
 .hum img, .wind img{
     height: 35px;
     width: 35px;
@@ -79,4 +103,19 @@ body{
 .label{
     font-size: 14px;
     margin: 0;
+}
+@media (max-width: 480px) {
+    .container{
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+    .serch input{
+        width: 60%;
+    }
+    .foot{
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 40px;
+    }
 }
